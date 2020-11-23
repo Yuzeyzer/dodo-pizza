@@ -1,0 +1,26 @@
+@mixin font($size, $weight, $color) {
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin position($abs, $top, $right, $bottom: auto, $left: auto) {
+	position: $abs;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin flex-center($justify-value: center, $align-value: center) {
+	display: flex;
+	justify-content: $justify-value;
+	align-items: $align-value;
+}
+
+@mixin form-center() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
