@@ -1,9 +1,44 @@
 .container {
-	max-width: 1200px;
+	max-width: vw(1200);
 	margin: 0 auto;
 }
 
 body {
 	margin: 0;
 	font-family: "Proxima Nova", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+span {
+	display: inline-block;
+}
+
+button {
+	outline: none;
+	border: none;
+	cursor: pointer;
 }

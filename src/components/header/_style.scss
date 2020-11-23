@@ -1,0 +1,76 @@
+.header {
+	padding-top: vw(106);
+	padding-bottom: vw(62);
+	&__row {
+		@include flex-center(space-between);
+	}
+	&__button {
+		&::before {
+			content: "";
+			@include form-center(vw(2.5));
+			width: vw(1);
+			height: vw(25);
+			background-color: $color-white;
+			opacity: 0.25;
+		}
+	}
+}
+
+.logo {
+	@include flex-center();
+	&__info {
+		margin-left: vw(17);
+	}
+	&__image {
+		width: vw(38);
+		height: vw(38);
+	}
+	&__title {
+		@include font(vw(24), 800, $color-black);
+	}
+	&__description {
+		@include font(vw(16), 400, $color-gray);
+	}
+}
+
+.button {
+	@include flex-center(space-between);
+	position: relative;
+	background-color: $color-orange;
+	border-radius: vw(30);
+	padding: vw(16) vw(22);
+	border: vw(2) solid transparent;
+	transition: 0.3s;
+	&__price,
+	&__count {
+		@include font(vw(16), 700);
+		transition: 0.3s;
+	}
+	&__icon {
+		margin: 0 vw(12) 0 vw(30);
+		width: vw(16);
+		height: vw(16);
+		transition: 0.3s;
+		path {
+			stroke: $color-white;
+			transition: 0.3s;
+		}
+	}
+	&:hover {
+		background-color: $color-white;
+		border: vw(2) solid $color-orange;
+		.button__price,
+		.button__count {
+			color: $color-orange;
+		}
+		.button__icon {
+			fill: $color-orange;
+			path {
+				stroke: $color-orange;
+			}
+		}
+		&::before {
+			background-color: $color-orange;
+		}
+	}
+}

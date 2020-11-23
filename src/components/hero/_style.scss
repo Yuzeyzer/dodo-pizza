@@ -1,0 +1,21 @@
+.hero {
+	&__row {
+		margin: vw(-10);
+	}
+	&__column {
+		padding: vw(10);
+		box-sizing: border-box;
+	}
+	&__item {
+		width: 100%;
+		img {
+			transition: 0.3s;
+			width: 100%;
+		}
+		&:hover {
+			img {
+				opacity: 0.8;
+			}
+		}
+	}
+}
