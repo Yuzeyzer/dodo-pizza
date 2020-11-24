@@ -1,0 +1,23 @@
+.filter {
+	padding-top: vw(42);
+	&__list {
+		display: flex;
+	}
+	&__item {
+		@include font(16px, 700, $color-black);
+		margin-right: vw(10);
+		padding: vw(15) vw(30);
+		background-color: $color-lightGray;
+		border-radius: vw(30);
+		cursor: pointer;
+		transition: 0.5s;
+		&.is-active {
+			@include font(16px, 700, $color-white);
+			background-color: $color-black;
+		}
+		&:not(.is-active):hover {
+			background-color: $color-black;
+			color: $color-white;
+		}
+	}
+}

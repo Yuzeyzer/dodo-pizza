@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/logo.svg';
 
 const Header = () => {
+  const [classes, setClasses] = useState(true);
+
+  const classTogler = () => {
+    setClasses(classes ? false : true);
+  };
+
   return (
     <header className='header'>
       <div className='container'>
         <div className='header__row'>
-          <a href="index.html" className='header__logo logo row'>
+          <a href='index.html' className='header__logo logo row'>
             <img className='logo__image' src={logo} alt='logo' />
             <div className='logo__info'>
               <h2 className='logo__title'>REACT PIZZA</h2>
