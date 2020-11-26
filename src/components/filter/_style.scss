@@ -1,11 +1,11 @@
 .filter {
-	padding-top: vw(42);
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 	}
 	&__item {
 		@include font(16px, 700, $color-black);
-		margin-right: vw(10);
+		margin: 0 vw(10) vw(10) 0;
 		padding: vw(15) vw(30);
 		background-color: $color-lightGray;
 		border-radius: vw(30);
