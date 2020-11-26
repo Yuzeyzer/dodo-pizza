@@ -4,7 +4,7 @@
 		flex-wrap: wrap;
 	}
 	&__item {
-		@include font(16px, 700, $color-black);
+		@include font(vw(16), 700, $color-black);
 		margin: 0 vw(10) vw(10) 0;
 		padding: vw(15) vw(30);
 		background-color: $color-lightGray;
@@ -12,7 +12,7 @@
 		cursor: pointer;
 		transition: 0.5s;
 		&.is-active {
-			@include font(16px, 700, $color-white);
+			color: $color-white;
 			background-color: $color-black;
 		}
 		&:not(.is-active):hover {

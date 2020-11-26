@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function SortPopUp() {
+  const [sort, setSort] = useState(false);
+
+  const handleClick = () => {
+    setSort(sort ? false : true);
+  };
   return (
     <div className='sort'>
-      <div className='sort__label'>
+      <div onClick={() => handleClick()} className='sort__label'>
         <svg
+          className={`sort__arrow ${sort ? 'is-active' : ''}`}
           width='10'
           height='6'
           viewBox='0 0 10 6'
@@ -18,7 +24,7 @@ function SortPopUp() {
         <b>Сортировка по:</b>
         <span>популярности</span>
       </div>
-      <div className='sort__popup'>
+      <div className={`sort__popup ${sort ? 'is-active' : ''}`}>
         <ul>
           <li className='active'>популярности</li>
           <li>цене</li>

@@ -2,6 +2,7 @@ import React from 'react';
 import Filter from '../filter';
 import Sort from '../sortPopUp';
 import Pizzas from '../pizzas';
+import { pizzas as pizzasDataBase } from './const';
 
 function Menu() {
   return (
@@ -11,7 +12,7 @@ function Menu() {
           <Filter />
           <Sort />
         </div>
-        <Pizzas />
+        <Pizzas {...pizzasDataBase} />
       </div>
     </section>
   );

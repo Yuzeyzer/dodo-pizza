@@ -1,11 +1,14 @@
 .sort {
 	position: relative;
+	&__arrow {
+		margin-right: 8px;
+		&.is-active{
+			transform: rotate(180deg);
+		}
+	}
 	&__label {
 		display: flex;
 		align-items: center;
-		svg {
-			margin-right: 8px;
-		}
 		b {
 			margin-right: 8px;
 		}
@@ -16,8 +19,10 @@
 		}
 	}
 	&__popup {
+		display: none;
 		position: absolute;
 		right: 0;
+		z-index: 1;
 		margin-top: 15px;
 		background: #ffffff;
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
@@ -27,6 +32,7 @@
 		width: 160px;
 		ul {
 			overflow: hidden;
+			user-select: none;
 			li {
 				padding: 12px 20px;
 				cursor: pointer;
@@ -40,6 +46,10 @@
 				}
 			}
 		}
+		&.is-active {
+			display: block;
+		}
+
 	}
 }
 // .pizza-block {

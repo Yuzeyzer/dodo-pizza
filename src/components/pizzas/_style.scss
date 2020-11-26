@@ -1,4 +1,8 @@
 .pizzas {
+	$self: &;
+	&__title {
+		@include font(vw(32), 700, $color-black);
+	}
 	&__parameters {
 		background-color: #f3f3f3;
 		text-align: center;
@@ -7,6 +11,33 @@
 	&__row {
 		justify-content: space-between;
 		align-items: center;
+	}
+	&__image {
+		transition: 10s;
+		border-radius: 50%;
+		transform: rotate(0);
+	}
+	.ajara {
+		margin: 0 vw(-18);
+	}
+	&__block {
+		padding: 0 vw(18) vw(65);
+		box-sizing: border-box;
+	}
+	&__item {
+		text-align: center;
+		&:hover {
+			#{$self}__image {
+				transform: rotate(360deg);
+			}
+		}
+	}
+	&__name {
+		@include font(vw(20), 800, $color-black);
+		margin: vw(5) 0 vw(15);
+	}
+	&__price {
+		@include font(vw(22), 800, $color-black);
 	}
 	&__types,
 	&__sizes {
@@ -28,6 +59,57 @@
 	&__sizes {
 		li {
 			width: 33.33%;
+			margin-top: vw(7);
 		}
+	}
+	&__button {
+		@include font(vw(16), 700);
+		@include flex-center();
+		padding: vw(10) vw(18);
+		background-color: $color-orange;
+		border: vw(1) solid $color-orange;
+		border-radius: vw(30);
+		transition: 0.3s;
+		span {
+			transition: 0.3s;
+		}
+		&:hover {
+			background-color: $color-white;
+			span:first-child {
+				color: $color-orange;
+			}
+			.button {
+				&__add {
+					color: $color-orange;
+				}
+				&__counter {
+					background-color: $color-orange;
+					color: $color-white;
+				}
+			}
+		}
+	}
+	.button {
+		&__add {
+			margin: 0 vw(7);
+			transition: 0.3s;
+		}
+		&__counter {
+			// display: none;
+			padding: vw(3) vw(7);
+			background-color: $color-white;
+			color: $color-orange;
+			border-radius: 50%;
+			transition: 0.3s;
+		}
+	}
+}
+
+@keyframes rotata {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }
