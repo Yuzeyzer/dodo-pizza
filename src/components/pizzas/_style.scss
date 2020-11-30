@@ -54,6 +54,10 @@
 				background-color: $color-white;
 				border-radius: vw(5);
 			}
+			&.is-disabled {
+				opacity: 0.2;
+				pointer-events: none;
+			}
 		}
 	}
 	&__sizes {
@@ -95,12 +99,15 @@
 			transition: 0.3s;
 		}
 		&__counter {
-			// display: none;
+			display: none;
 			padding: vw(3) vw(7);
 			background-color: $color-white;
 			color: $color-orange;
 			border-radius: 50%;
 			transition: 0.3s;
+			&.is-active {
+				display: inline-block;
+			}
 		}
 	}
 }

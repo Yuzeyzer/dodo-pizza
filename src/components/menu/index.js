@@ -12,7 +12,14 @@ function Menu() {
           <Filter />
           <Sort />
         </div>
-        <Pizzas {...pizzasDataBase} />
+        <div className='pizzas'>
+          <h2 className='pizzas__title'>Все пиццы</h2>
+          <div className='row pizzas__row pt-35 ajara'>
+            {pizzasDataBase.map((item) => {
+              return <Pizzas {...item} />;
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
