@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-const Pizzas = ({ id, imgSrc, name, price, typesNames, typesAvailable, sizes }) => {
+const Pizzas = ({ id, imageUrl, name, price, types, sizes }) => {
   let [counter, setCounter] = useState(0);
   const [sizeActive, setSizeActive] = useState(0);
-  const [typesActive, setTypesActive] = useState(0);
+  const [typesActive, setTypesActive] = useState(types[0]);
+
+  const sizesAvailable = [26, 30, 40];
+  const typesNames = ['тонкое', 'традиционное'];
+
   const typesClick = (i) => {
     setTypesActive(i);
   };
@@ -17,7 +21,7 @@ const Pizzas = ({ id, imgSrc, name, price, typesNames, typesAvailable, sizes }) 
   return (
     <div className='pizzas__block col-3'>
       <div className='pizzas__item'>
-        <img src={imgSrc} alt='pizza1' className='pizzas__image' />
+        <img src={imageUrl} alt='pizza1' className='pizzas__image' />
         <h3 className='pizzas__name'>{name}</h3>
         <div className='pizzas__parameters'>
           <ul className='pizzas__types'>
@@ -27,8 +31,8 @@ const Pizzas = ({ id, imgSrc, name, price, typesNames, typesAvailable, sizes }) 
                   onClick={() => typesClick(index)}
                   key={type}
                   className={classNames({
-                    isActive: index === typesActive,
-                    isDisabled: !typesAvailable.includes(index),
+                    'is-active': index === typesActive,
+                    'is-disabled': !types.includes(index),
                   })}>
                   {type}
                 </li>
@@ -36,12 +40,17 @@ const Pizzas = ({ id, imgSrc, name, price, typesNames, typesAvailable, sizes }) 
             })}
           </ul>
           <ul className='pizzas__sizes'>
-            {sizes.map((size, index) => {
+            {sizesAvailable.map((size, index) => {
+              console.log(size);
+              console.log(sizes, 'sizes');
               return (
                 <li
                   onClick={() => sizeClick(index)}
                   key={size}
-                  className={index === sizeActive ? 'is-active' : ''}>
+                  className={classNames({
+                    'is-active': index === sizeActive && sizes.includes(size),
+                    'is-disabled': !sizes.includes(size),
+                  })}>
                   {size} см.
                 </li>
               );

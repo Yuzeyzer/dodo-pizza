@@ -4,9 +4,9 @@ export const pizzas = [
     imgSrc:
       'https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg',
     name: 'Чизбургер-пицца',
-    typesAvailable: [1],
+    typesAvailable: [0],
     typesNames: ['тонкое', 'традиционное'],
-    sizes: ['26', '30', '40'],
+    sizes: ['26', '30'],
     price: 395,
   },
   {
@@ -16,7 +16,7 @@ export const pizzas = [
     name: 'Сырная',
     typesAvailable: [0],
     typesNames: ['тонкое', 'традиционное'],
-    sizes: ['26', '30', '40'],
+    sizes: ['26', '40'],
     price: 295,
   },
   {
@@ -76,7 +76,7 @@ export const pizzas = [
     name: 'Сырный цыпленок',
     typesAvailable: [0],
     typesNames: ['тонкое', 'традиционное'],
-    sizes: ['26', '30', '40'],
+    sizes: ['26', '30'],
     price: 495,
   },
   {
@@ -94,7 +94,7 @@ export const pizzas = [
     imgSrc:
       'https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg',
     name: 'Сырная',
-    typesAvailable: [1, 0],
+    typesAvailable: [0, 1],
     typesNames: ['тонкое', 'традиционное'],
     sizes: ['26', '30', '40'],
     price: 295,

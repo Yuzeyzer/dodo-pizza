@@ -2,11 +2,17 @@
 	$self: &;
 	&__title {
 		@include font(vw(32), 700, $color-black);
+		@include mobile(568px) {
+			font-size: vmin(32);
+		}
 	}
 	&__parameters {
 		background-color: #f3f3f3;
 		text-align: center;
 		padding: vw(5) vw(5);
+		@include mobile(568px) {
+			padding: vmin(5) vmin(5);
+		}
 	}
 	&__row {
 		justify-content: space-between;
@@ -118,5 +124,47 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+@include mobile(578px) {
+	.pizzas {
+		&__parameters {
+			padding: vmin(5) vmin(5);
+		}
+		&__block {
+			padding: 0 vmin(18) vmin(65);
+		}
+		&__name {
+			font-size: vmin(20);
+			margin: vmin(5) 0 vmin(15);
+		}
+		.ajara {
+			margin: 0 vmin(-18);
+		}
+		&__price {
+			font-size: vmin(22);
+		}
+		&__types,
+		&__sizes {
+			li {
+				font-size: vmin(14);
+				padding: vmin(10) 0;
+				&.is-active {
+					border-radius: vmin(5);
+				}
+			}
+		}
+		&__sizes {
+			li {
+				margin-top: vmin(7);
+			}
+		}
+		&__button {
+			font-size: vmin(16);
+			padding: vmin(10) vmin(18);
+			border: vmin(1) solid $color-orange;
+			border-radius: vmin(30);
+		}
 	}
 }

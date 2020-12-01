@@ -24,3 +24,9 @@
 	top: 50%;
 	transform: translate($X, $Y);
 }
+
+@mixin mobile($screen-width) {
+	@media screen and (max-width: $screen-width) {
+		@content;
+	}
+}
