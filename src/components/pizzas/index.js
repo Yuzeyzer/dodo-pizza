@@ -41,8 +41,8 @@ const Pizzas = ({ id, imageUrl, name, price, types, sizes }) => {
           </ul>
           <ul className='pizzas__sizes'>
             {sizesAvailable.map((size, index) => {
-              console.log(size);
-              console.log(sizes, 'sizes');
+              // console.log(size);
+              // console.log(sizes, 'sizes');
               return (
                 <li
                   onClick={() => sizeClick(index)}

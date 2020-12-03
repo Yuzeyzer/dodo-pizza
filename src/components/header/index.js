@@ -13,13 +13,13 @@ const Header = () => {
     <header className='header'>
       <div className='container'>
         <div className='header__row'>
-          <a href='index.html' className='header__logo logo row'>
+          <Link to='/' className='header__logo logo row'>
             <img className='logo__image' src={logo} alt='logo' />
             <div className='logo__info'>
               <h2 className='logo__title'>REACT PIZZA</h2>
               <p className='logo__description'>Самая вкусная пицца во вселенной</p>
             </div>
-          </a>
+          </Link>
           <Link to='/cart' className='header__button button'>
             <span className='button__price'>520 ₽</span>
             <svg
