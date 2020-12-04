@@ -1,13 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-function SortPopUp() {
+
+
+function SortPopUp({ items }) {
   const [sort, setSort] = useState(false);
+  const [active, setActive] = useState(0);
+  const sortPop = useRef();
 
   const handleClick = () => {
     setSort(sort ? false : true);
   };
+
+  const onSelectItem = (index) => {
+    setActive(index);
+    setSort(false);
+  };
+
+  const handleOutsideClick = (e) => {
+    if (!e.path.includes(sortPop.current)) {
+      setSort(false);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener('click', handleOutsideClick);
+  }, []);
+
+  
+
   return (
-    <div className='sort'>
+    <div ref={sortPop} className='sort'>
       <div onClick={() => handleClick()} className='sort__label'>
         <svg
           className={`sort__arrow ${sort ? 'is-active' : ''}`}
@@ -22,17 +45,40 @@ function SortPopUp() {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span>популярности</span>
+        <span>{items[active].name}</span>
       </div>
       <div className={`sort__popup ${sort ? 'is-active' : ''}`}>
         <ul>
-          <li className='active'>популярности</li>
-          <li>цене</li>
-          <li>алфавиту</li>
+          {items.map((item, index) => {
+            // console.log(item.name)
+            return (
+              <li key={item + index} onClick={() => onSelectItem(index)} className={index === active ? 'active' : ''}>
+                {item.name}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
   );
 }
 
+
 export default SortPopUp;
+
+
+SortPopUp.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+}
+
+SortPopUp.defaultProps = {
+  items: [{name:'Кролик'},{name:'Сендвич'},{name:'Кола'}],
+};
+
+// Pizzas.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   name: PropTypes.string.isRequired,
+//   types: PropTypes.array.isRequired,
+//   sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+//   price: PropTypes.number.isRequired,
+// };

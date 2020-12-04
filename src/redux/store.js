@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-
+import './reducers/sort.js';
 function counterReducer(state = { number: 0 }, action) {
   switch (action.type) {
     case 'ДОБАВИТЬ':
@@ -12,7 +12,6 @@ function counterReducer(state = { number: 0 }, action) {
       return state;
   }
 }
-
 const store = createStore(counterReducer);
 
 export default store;
