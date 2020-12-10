@@ -6,14 +6,15 @@ import Home from './pages/home';
 import React from 'react';
 import store from './redux/store';
 
-function App() {
+import SignIn from './components/signin';
 
+function App() {
   return (
     <div className='App'>
-     
       <Header />
-      <Route exact path='/' component={Home} />
-      <Route exact path='/cart' component={Cart} />
+      <SignIn />
+      {/* <Route exact path='/' component={Home} />
+      <Route exact path='/cart' component={Cart} /> */}
     </div>
   );
 }
