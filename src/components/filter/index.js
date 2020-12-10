@@ -1,48 +1,34 @@
 import React, { useState } from 'react';
 import { filterNames } from './const.js';
 import { setCategory } from '../../redux/actions/filters';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 
 function Filter() {
-  const [input, setInput] = useState('');
   const [names, setNames] = useState(filterNames);
-  const [elIndex, setElIndex] = useState(0);
 
   const dispatch = useDispatch();
+  const seitek = useSelector(({filters}) => {
+    return {
+      categoryIndex: filters.category
+    }
+  })
 
-  // const handleChange = (event) => {
-  //   setInput(event.target.value);
-  // };
 
-  // const handleEnter = (event) => {
-  //   setInput(event.target.value);
-  //   if (event.key === 'Enter') {
-  //     setNames([...names, event.target.value]);
-  //     setInput('');
-  //   }
-  // };
-
+  console.log(seitek)
   const handleClick = (index) => {
-    setElIndex(index);
     dispatch(setCategory(index));
+    console.log(seitek)
   };
 
   return (
     <div className='filter'>
-      {/* <input
-        onKeyPress={handleEnter}
-        type='text'
-        placeholder='Добавь в фильтр новый элемент'
-        value={input}
-        onChange={handleChange}
-      /> */}
       <ul className='filter__list'>
         {names.map((item, index) => {
           return (
             <li
               key={item}
               onClick={() => handleClick(index)}
-              className={`filter__item ${index === elIndex ? 'is-active' : ''}`}>
+              className={`filter__item ${index === seitek.categoryIndex  ? 'is-active' : ''}`}>
               {item}
             </li>
           );

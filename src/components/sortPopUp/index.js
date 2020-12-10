@@ -2,16 +2,20 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import store from '../../redux/store';
 import { setSortBy } from '../../redux/actions/filters';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-function SortPopUp({ items }) {
+const SortPopUp = React.memo(function SortPopUp({ items }) {
   const [sort, setSort] = useState(false);
   const [active, setActive] = useState(0);
   const sortPop = useRef();
 
-  localStorage.setItem('test', 1);
-
   const dispatch = useDispatch();
+
+  const sortStore = useSelector(({filters}) => {
+    return {
+      sortBy: filters.sortBy
+    }
+  })
 
   const sortNames = ['popular', 'price', 'alphabet'];
 
@@ -70,7 +74,7 @@ function SortPopUp({ items }) {
       </div>
     </div>
   );
-}
+});
 
 export default SortPopUp;
 
