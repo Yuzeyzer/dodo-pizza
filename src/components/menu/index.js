@@ -6,9 +6,11 @@ import setPizzas from '../../redux/actions/pizzas';
 // import { connect } from 'redux';
 import { useDispatch, useSelector, connect } from 'react-redux';
 
+import { fetchPizzas } from '../../redux/actions/pizzas';
+
 function Menu() {
   const dispatch = useDispatch();
-  
+
   const hranilishe = useSelector(({ pizzas, filters }) => {
     return {
       items: pizzas.items,
@@ -16,16 +18,12 @@ function Menu() {
     };
   });
 
-  console.log(hranilishe.items);
+  const { category, sortBy } = useSelector(({ filters }) => filters);
 
-  useEffect(() => {
-    fetch('http://localhost:3000/database.json')
-      .then((response) => response.json())
-      .then(({ pizzas }) => pizzas)
-      .then((array) => {
-        dispatch(setPizzas(array));
-      });
-  }, []);
+  React.useEffect(() => {
+    dispatch(fetchPizzas(category));
+  }, [category]);
+
 
   return (
     <section className='menu'>
