@@ -121,5 +121,300 @@
       "category": 0,
       "rating": 8
     }
+  ],
+  "snacks": [
+    {
+      "id": 0,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/c7438015dcc24d599daa02db7ff79be6_233x233.jpeg",
+      "name": "Додстер",
+      "price": 139,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/29d4bf3571804872acaa97d496c09e48_233x233.jpeg",
+      "name": "Острый Додстер 🌶️🌶️",
+      "price": 139,
+      "category": 1,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/f6b66d5cbcd240b5be7914d91a431942_233x233.jpeg",
+      "name": "Додстер Чипотле 🌶️",
+      "price": 139,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/2eb7be57cf35400b80ccddcd48d2a374_233x233.jpeg",
+      "name": "Грибной Стартер 🌱",
+      "price": 139,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/8236fffec89f4bc78b0e7af8ea8432e3_233x233.jpeg",
+      "name": "Острый Стартер 🌶️🌶️",
+      "price": 129,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/686c7a2974e54b6a97ace0ae09b831fa_233x233.jpeg",
+      "name": "Мясной Стартер 🌶️",
+      "price": 129,
+      "category": 0,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/d0eaee06408e4b86a1eab038005d51d9_233x233.jpeg",
+      "name": "Ланчбокс с крыльями барбекю",
+      "price": 275,
+      "category": 0,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/9849e5d652854f71a302e570cb9e16a3_233x233.jpeg",
+      "name": "Ланчбокс с куриными кусочками",
+      "price": 275,
+      "category": 1,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/dc8dfaf710fc4cd784850dbe8b73ea45_233x233.jpeg",
+      "name": "Картофель из печи, большой 🌱",
+      "price": 395,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/e34b520f694d4c3a8c750534c89d745e_233x233.jpeg",
+      "name": "Крылья барбекю",
+      "price": 285,
+      "category": 1,
+      "rating": 7
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/ea42377913f24ef7b85509fd77ca55d0_233x233.jpeg",
+      "name": "Куриные кусочки, 300 гр",
+      "price": 275,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/339e81709c764e38bb7e8a50a27407c4_233x233.jpeg",
+      "name": "Паста Карбонара",
+      "price": 415,
+      "category": 0,
+      "rating": 8
+    }
+  ],
+  "desserts": [
+    {
+      "id": 0,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/1a72b445d2c5427d9358d1cadb2e1e03_233x233.jpeg",
+      "name": "Молочный коктейль с печеньем Орео",
+      "price": 139,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/c2ef6fe6ef434227a3a5125cb65e0f7d_233x233.jpeg",
+      "name": "Классический молочный коктейль",
+      "price": 139,
+      "category": 1,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/9579c93422b64121806cd15f7146d0af_233x233.jpeg",
+      "name": "Клубничный молочный коктейль",
+      "price": 139,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/f0cb638cb64f4aac9c55a8947b692b77_233x233.jpeg",
+      "name": "Шоколадный молочный коктейль",
+      "price": 139,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/75ff2e8e30f0430a8948fcb51edec6be_233x233.jpeg",
+      "name": "Карамельный молочный коктейль",
+      "price": 129,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/a42f07ffea3f48c3984816657e4196c9_233x233.jpeg",
+      "name": "Айс Капучино, 0.35 л",
+      "price": 129,
+      "category": 0,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/dc63d8b54f25464cbfafa79583e65275_233x233.jpeg",
+      "name": "Мороженое 6 мини-эскимо",
+      "price": 275,
+      "category": 0,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/2391fd259b4b46e19afb59e5b19e12be_233x233.jpeg",
+      "name": "Блинчики с малиной, 2 шт",
+      "price": 275,
+      "category": 1,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/fd1577cc764341de9816584d226d8a62_233x233.jpeg",
+      "name": "Рулетики с яблоками + Рулетики со смородиной, 16 шт",
+      "price": 395,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/8ed5a55ceffa47d095b0a56946f7a069_233x233.jpeg",
+      "name": "Рулетики с яблоками, 16 шт",
+      "price": 285,
+      "category": 1,
+      "rating": 7
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/70d4d4101e0242c3868fb561b3a9df5a_233x233.jpeg",
+      "name": "Рулетики со смородиной, 16 шт",
+      "price": 275,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/153cbfbb169b4dd5a6f3df89f41c7a07_233x233.jpeg",
+      "name": "Рулетики с ананасами + Рулетики с брусникой, 16 шт",
+      "price": 415,
+      "category": 0,
+      "rating": 8
+    }
+  ],
+  "drinks":
+  [
+    {
+      "id": 0,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/fb874c95-cf53-49d2-af67-26e4473d7af7.jpg",
+      "name": "Coca-cola",
+      "price": 139,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/ef14c3e8-3c66-40ed-bf53-beb302d650bc.jpg",
+      "name": "Coca-cola",
+      "price": 139,
+      "category": 1,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/803abbc5-da00-49a0-9f7a-d4acae99befb.jpg",
+      "name": "Фанта",
+      "price": 139,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/7b775316-1d12-4850-9768-946a9bd700fe.jpg",
+      "name": "Фанта",
+      "price": 139,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/eac8a5df-1ec2-4bc8-9be1-d9eb2deebd6a.jpg",
+      "name": "Спрайт",
+      "price": 129,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/155b4ba9-3fd3-4992-8ec9-326638b3e2ee.jpg",
+      "name": "Спрайт",
+      "price": 129,
+      "category": 0,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/400bbeff-f4b9-4d2f-8366-5cdfdbbcf9e0.jpg",
+      "name": "Чай холодный Fuse Tea Лимон",
+      "price": 275,
+      "category": 0,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/8109c32c-6abe-4f3b-8313-d49e49b953c1.jpg",
+      "name": "БонАква негаз",
+      "price": 275,
+      "category": 1,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/4820929a-c899-4670-a63f-ca9907cc3dc2.jpg",
+      "name": "Сок Апельсин",
+      "price": 395,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/f612cbb8-dc38-4c3b-8201-e354b6fae9fb.jpg",
+      "name": "Сок Яблоко",
+      "price": 285,
+      "category": 1,
+      "rating": 7
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Drinks/ru-RU/2239d196-a760-42d4-9c64-e90d43bc3153.jpg",
+      "name": "Сок Вишня",
+      "price": 275,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/dfe2da2c446246cab7c4b52fe27a81cc_233x233.jpeg",
+      "name": "Облепиховый пунш",
+      "price": 415,
+      "category": 0,
+      "rating": 8
+    }
   ]
 }

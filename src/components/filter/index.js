@@ -13,11 +13,9 @@ function Filter() {
     }
   })
 
-
-  console.log(seitek)
   const handleClick = (index) => {
     dispatch(setCategory(index));
-    console.log(seitek)
+    console.log(seitek.categoryIndex)
   };
 
   return (
@@ -28,7 +26,7 @@ function Filter() {
             <li
               key={item}
               onClick={() => handleClick(index)}
-              className={`filter__item ${index === seitek.categoryIndex  ? 'is-active' : ''}`}>
+              className={`filter__item ${index - 1 === seitek.categoryIndex  ? 'is-active' : ''}`}>
               {item}
             </li>
           );

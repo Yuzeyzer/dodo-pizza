@@ -1,5 +1,5 @@
 const initialState = {
-  category: 0,
+  category: -1,
   sortBy: 'popular',
 };
 
@@ -13,7 +13,7 @@ const filters = (state = initialState, action) => {
   if (action.type === 'SET_CATEGORY') {
     return {
       ...state,
-      category: action.payload,
+      category: action.payload - 1,
     };
   }
   return state;
