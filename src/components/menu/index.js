@@ -20,6 +20,7 @@ function Menu() {
   });
   const [pizzas, setPizzas] = React.useState([]);
   const [snacks, setSnacks] = React.useState([]);
+  const [desserts, setDesserts] = React.useState([]);
   const [title, setTitle] = React.useState(true);
   const [searchValue, setSearchValue] = React.useState('');
 
@@ -34,9 +35,10 @@ function Menu() {
     axios
       .get(`http://localhost:3000/database.json`)
       .then((response) => response.data)
-      .then(({ pizzas, snacks }) => {
+      .then(({ pizzas, snacks, desserts }) => {
         setPizzas(pizzas);
         setSnacks(snacks);
+        setDesserts(desserts);
       });
     // dispatch(fetchPizzas(category));
   }, []);
@@ -81,6 +83,26 @@ function Menu() {
           <h2 className='pizzas__title'>Закуски</h2>
           <div className='row pizzas__row pt-35 ajara'>
             {snacks
+              .filter((element) => {
+                if (searchValue === '') {
+                  return element;
+                } else if (element.name.toLowerCase().includes(searchValue.toLowerCase())) {
+                  return element;
+                }
+              })
+              .map((item) => {
+                if (seitek.categoryIndex === -1) {
+                  return <Pizzas {...item} key={item.id} />;
+                } else if (item.category === seitek.categoryIndex) {
+                  return <Pizzas {...item} key={item.id} />;
+                }
+              })}
+          </div>
+        </div>
+        <div className='pizzas'>
+          <h2 className='pizzas__title'>Десерты</h2>
+          <div className='row pizzas__row pt-35 ajara'>
+            {desserts
               .filter((element) => {
                 if (searchValue === '') {
                   return element;
