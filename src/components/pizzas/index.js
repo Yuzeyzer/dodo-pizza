@@ -4,10 +4,23 @@ import classNames from 'classnames';
 import Sizes from './sizes';
 import Types from './types';
 
-const Pizzas = ({ id, imageUrl, name, price, types, sizes }) => {
+const Pizzas = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }) => {
   let [counter, setCounter] = useState(0);
   const counterClick = () => {
     return setCounter(counter + 1);
+  };
+
+  const aiza = () => {
+    const obj = {
+      id,
+      imageUrl,
+      name,
+      price,
+      types,
+      sizes,
+    };
+
+    onClickAddPizza(obj);
   };
   return (
     <div className='pizzas__block col-3'>
@@ -17,13 +30,16 @@ const Pizzas = ({ id, imageUrl, name, price, types, sizes }) => {
         <div className={`${types.length > 0 ? 'pizzas__parameters' : 'pizzas__description'}`}>
           {types.length > 0 ? <Types types={types} /> : ''}
           {sizes.length > 0 ? <Sizes sizes={sizes} /> : ''}
-          {sizes.length && types.length > 0
-            ? ''
-            : 'Освежающим молочный коктейль с холодным молоком, мороженым на сливках и шоколадным соусом.'}
+          {sizes.length && types.length > 0 ? '' : ''}
         </div>
         <div className='row pizzas__row pt-15'>
           <span className='pizzas__price'>от {price} ₽</span>
-          <button onClick={() => counterClick()} className='pizzas__button'>
+          <button
+            onClick={() => {
+              counterClick();
+              aiza();
+            }}
+            className='pizzas__button'>
             <span>+</span>
             <span className='button__add'>Добавить</span>
             <span className={`button__counter ${counter !== 0 ? 'is-active' : ''}`}>{counter}</span>

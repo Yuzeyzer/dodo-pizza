@@ -15,3 +15,12 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
+
+// const concat = (arr = [], ...values) => {
+//   let bogdan = arr;
+//   values.forEach((item) => {
+//     bogdan.push(item);
+//   });
+//   return bogdan;
+// };
+// console.log(concat([2], 2, 4, 7, 9, 0));

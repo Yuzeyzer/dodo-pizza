@@ -5,7 +5,7 @@ import Pizzas from '../pizzas';
 import setPizzas from '../../redux/actions/pizzas';
 import { setCategory } from '../../redux/actions/filters';
 import { useDispatch, useSelector, connect } from 'react-redux';
-
+import { addPizzaToCart } from '../../redux/actions/cart';
 import { fetchPizzas } from '../../redux/actions/pizzas';
 import axios from 'axios';
 
@@ -29,6 +29,10 @@ function Menu() {
   const handleSearchValue = (event) => {
     setSearchValue(event.target.value);
     console.log(searchValue);
+  };
+
+  const handleAddPizzaToCart = (obj) => {
+    dispatch(addPizzaToCart(obj));
   };
 
   React.useEffect(() => {
@@ -72,14 +76,14 @@ function Menu() {
               })
               .map((item) => {
                 if (seitek.categoryIndex === -1) {
-                  return <Pizzas {...item} key={item.id} />;
+                  return <Pizzas onClickAddPizza={handleAddPizzaToCart} {...item} key={item.id} />;
                 } else if (item.category === seitek.categoryIndex) {
-                  return <Pizzas {...item} key={item.id} />;
+                  return <Pizzas onClickAddPizza={handleAddPizzaToCart} {...item} key={item.id} />;
                 }
               })}
           </div>
         </div>
-        <div className='pizzas'>
+        {/* <div className='pizzas'>
           <h2 className='pizzas__title'>Закуски</h2>
           <div className='row pizzas__row pt-35 ajara'>
             {snacks
@@ -118,7 +122,7 @@ function Menu() {
                 }
               })}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -129,3 +133,25 @@ export default connect()(Menu);
 //  {.map((item) => {
 //                 return <Pizzas {...item} key={item.id} />;
 //               })}
+
+// const arr = [
+//   {
+//     price: 100,
+//   },
+//   {
+//     price: 200,
+//   },
+//   {
+//     price: 300,
+//   },
+// ];
+
+// const result = arr.reduce((sum, item) => {
+//   return sum + item.price;
+// }, 0);
+
+// let sum = 0;
+
+// const result = arr.map((item) => sum += item.price);
+
+// console.log(sum);
