@@ -1,27 +1,33 @@
 import React from 'react';
 import emptyCart from '../../assets/empty-cart.png';
 import CartItem from '../../components/cartItem';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart, plusCartItem, minusCartItem, removeCartItem } from '../../redux/actions/cart';
+import cart from '../../redux/reducers/cart';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = React.useState([]);
-  const { items, totalCount, totalPrice } = useSelector(({ cart }) => {
-    return cart;
-  });
+  const dispatch = useDispatch();
+  const { items, totalCount, totalPrice } = useSelector(({ cart }) => cart);
 
-  const addedPizzas = Object.keys(items).map((key) => {
-    return items[key].items[0];
-  });
+  const addedPizzas = Object.keys(items).map((key) => items[key].items[0]);
 
-  React.useEffect(() => {
-    setCartItems([...cartItems, items]);
-  }, []);
+  const handleClearCart = () => {
+    if (window.confirm('Вы действительно хотите очистить корзину?')) {
+      dispatch(clearCart());
+    }
+  };
+
+  const handlePlusCartItem = (id) => dispatch(plusCartItem(id));
+
+  const handleMinusCartItem = (id) => dispatch(minusCartItem(id));
+
+  const handleRemoveCartItem = (id) => dispatch(removeCartItem(id));
 
   return (
     <div class='content'>
       <div class='container container--cart'>
         <div class='cart'>
-          {cartItems.length > 0 && (
+          {addedPizzas.length > 0 && (
             <>
               <div class='cart__top'>
                 <h2 class='content__title'>
@@ -92,13 +98,21 @@ const Cart = () => {
                     />
                   </svg>
 
-                  <span>Очистить корзину</span>
+                  <span onClick={() => handleClearCart()}>Очистить корзину</span>
                 </div>
               </div>
               <div class='content__items'>
                 {addedPizzas.map((obj) => {
-                  console.log(obj);
-                  return <CartItem {...obj} />;
+                  return (
+                    <CartItem
+                      totalPrice={items[obj.id].totalPrice}
+                      totalCount={items[obj.id].items.length}
+                      handlePlusCartItem={handlePlusCartItem}
+                      handleMinusCartItem={handleMinusCartItem}
+                      handleRemoveCartItem={handleRemoveCartItem}
+                      {...obj}
+                    />
+                  );
                 })}
               </div>
               <div class='cart__bottom'>
@@ -139,7 +153,7 @@ const Cart = () => {
             </>
           )}
         </div>
-        {cartItems.length === 0 && (
+        {addedPizzas.length === 0 && (
           <div class='cart cart--empty'>
             <h2>
               Корзина пустая <icon>😕</icon>

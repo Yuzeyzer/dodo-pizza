@@ -1,6 +1,19 @@
 import React from 'react';
 
-const CartItem = ({ name, types, sizes, imageUrl, price }) => {
+const CartItem = ({
+  id,
+  name,
+  types,
+  sizes,
+  imageUrl,
+  price,
+  handlePlusCartItem,
+  totalCount,
+  handleMinusCartItem,
+  handleRemoveCartItem,
+  totalPrice,
+}) => {
+  const items = ['Традиционное', 'Тонкое'];
   return (
     <div class='cart__item'>
       <div class='cart__item-img'>
@@ -9,11 +22,13 @@ const CartItem = ({ name, types, sizes, imageUrl, price }) => {
       <div class='cart__item-info'>
         <h3>{name}</h3>
         <p>
-          {types} тесто, {sizes} см.
+          {items[0]} тесто, {sizes[0]} см.
         </p>
       </div>
       <div class='cart__item-count'>
-        <div class='button button--outline button--circle cart__item-count-minus'>
+        <div
+          onClick={() => handleMinusCartItem(id)}
+          class='button button--outline button--circle cart__item-count-minus'>
           <svg
             width='10'
             height='10'
@@ -30,8 +45,10 @@ const CartItem = ({ name, types, sizes, imageUrl, price }) => {
             />
           </svg>
         </div>
-        <b>2</b>
-        <div class='button button--outline button--circle cart__item-count-plus'>
+        <b>{totalCount}</b>
+        <div
+          onClick={() => handlePlusCartItem(id)}
+          class='button button--outline button--circle cart__item-count-plus'>
           <svg
             width='10'
             height='10'
@@ -50,9 +67,9 @@ const CartItem = ({ name, types, sizes, imageUrl, price }) => {
         </div>
       </div>
       <div class='cart__item-price'>
-        <b>{price} ₽</b>
+        <b>{totalPrice} ₽</b>
       </div>
-      <div class='cart__item-remove'>
+      <div onClick={() => handleRemoveCartItem(id)} class='cart__item-remove'>
         <div class='button button--outline button--circle'>
           <svg
             width='10'

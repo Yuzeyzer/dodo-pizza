@@ -10,7 +10,7 @@ const Pizzas = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }) =>
     return setCounter(counter + 1);
   };
 
-  const aiza = () => {
+  const sendDataToRedux = () => {
     const obj = {
       id,
       imageUrl,
@@ -37,7 +37,7 @@ const Pizzas = ({ id, imageUrl, name, price, types, sizes, onClickAddPizza }) =>
           <button
             onClick={() => {
               counterClick();
-              aiza();
+              sendDataToRedux();
             }}
             className='pizzas__button'>
             <span>+</span>
