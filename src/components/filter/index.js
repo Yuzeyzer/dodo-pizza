@@ -15,8 +15,13 @@ function Filter() {
 
   const handleClick = (index) => {
     dispatch(setCategory(index));
-    console.log(seitek.categoryIndex)
   };
+
+  const sortItems = [
+    { name: 'популярности', type: 'popular', order: 'desc' },
+    { name: 'цене', type: 'price', order: 'desc' },
+    { name: 'алфавиту', type: 'name', order: 'asc' },
+  ];
 
   return (
     <div className='filter'>

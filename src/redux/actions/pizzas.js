@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const API = `http://localhost:3001`;
+
 export const setPizzas = (items) => ({
   type: 'SET_PIZZAS',
   payload: items,
@@ -8,7 +10,7 @@ export const setPizzas = (items) => ({
 export const fetchPizzas = (sortBy, category) => (dispatch) => {
   axios
     .get(
-      `/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${
+      `${API}/pizzas?${category !== -1 ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${
         sortBy.order
       }`,
     )

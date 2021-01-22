@@ -1,6 +1,9 @@
 const initialState = {
   category: -1,
-  sortBy: 'popular',
+  sortBy: {
+    type:'popular',
+    order: 'desc'
+  },
 };
 
 const filters = (state = initialState, action) => {

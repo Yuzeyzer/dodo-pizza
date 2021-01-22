@@ -2,25 +2,21 @@ import React, { useEffect, useState } from 'react';
 import Filter from '../filter';
 import Sort from '../sortPopUp';
 import Pizzas from '../pizzas';
-import setPizzas from '../../redux/actions/pizzas';
 import { setCategory } from '../../redux/actions/filters';
 import { useDispatch, useSelector, connect } from 'react-redux';
 import { addPizzaToCart } from '../../redux/actions/cart';
 import { fetchPizzas } from '../../redux/actions/pizzas';
-import axios from 'axios';
 
 function Menu() {
   const dispatch = useDispatch();
 
-  const hranilishe = useSelector(({ pizzas, filters }) => {
+  const items = useSelector(({ pizzas }) => pizzas.items);
+
+  const hranilishe = useSelector(({ filters }) => {
     return {
-      items: pizzas.items,
       sortBy: filters.sortBy,
     };
   });
-  const [pizzas, setPizzas] = React.useState([]);
-  const [snacks, setSnacks] = React.useState([]);
-  const [desserts, setDesserts] = React.useState([]);
   const [title, setTitle] = React.useState(true);
   const [searchValue, setSearchValue] = React.useState('');
 
@@ -35,17 +31,15 @@ function Menu() {
     dispatch(addPizzaToCart(obj));
   };
 
+  const sortItems = [
+    { name: 'популярности', type: 'rating', order: 'desc' },
+    { name: 'цене', type: 'price', order: 'desc' },
+    { name: 'алфавиту', type: 'name', order: 'asc' },
+  ];
+
   React.useEffect(() => {
-    axios
-      .get(`http://localhost:3000/database.json`)
-      .then((response) => response.data)
-      .then(({ pizzas, snacks, desserts }) => {
-        setPizzas(pizzas);
-        setSnacks(snacks);
-        setDesserts(desserts);
-      });
-    // dispatch(fetchPizzas(category));
-  }, []);
+    dispatch(fetchPizzas(sortBy,category));
+  }, [sortBy,category]);
 
   const seitek = useSelector(({ filters }) => {
     return {
@@ -61,12 +55,12 @@ function Menu() {
         </label>
         <div className='row menu__row'>
           <Filter />
-          <Sort items={[{ name: 'Популярности' }, { name: 'Цене' }, { name: 'Алфавиту' }]} />
+          <Sort items={sortItems} />
         </div>
         <div className='pizzas'>
           <h2 className='pizzas__title'>{title && `Все пиццы`}</h2>
           <div className='row pizzas__row pt-35 ajara'>
-            {pizzas
+            {items
               .filter((element) => {
                 if (searchValue === '') {
                   return element;

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import store from '../../redux/store';
 import { setSortBy } from '../../redux/actions/filters';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -11,14 +10,13 @@ const SortPopUp = React.memo(function SortPopUp({ items }) {
 
   const dispatch = useDispatch();
 
-  const sortStore = useSelector(({filters}) => {
+  const sortStore = useSelector(({ filters }) => {
     return {
-      sortBy: filters.sortBy
-    }
-  })
+      sortBy: filters.sortBy,
+    };
+  });
 
-  const sortNames = ['popular', 'price', 'alphabet'];
-
+  
   const handleClick = () => {
     setSort(sort ? false : true);
   };
@@ -26,7 +24,7 @@ const SortPopUp = React.memo(function SortPopUp({ items }) {
   const onSelectItem = (index) => {
     setActive(index);
     setSort(false);
-    dispatch(setSortBy(sortNames[index]));
+    dispatch(setSortBy(items[index]));
   };
 
   const handleOutsideClick = (e) => {
